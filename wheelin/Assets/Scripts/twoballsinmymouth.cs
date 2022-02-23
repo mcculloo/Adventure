@@ -18,6 +18,7 @@ public class twoballsinmymouth : MonoBehaviour
     public bool isCrouching = false;
     float crouchSpeed;
     public static int Items;
+    private bool floor;
 
     public Transform cam;
     public float mouseSensitivity;
@@ -69,13 +70,16 @@ public class twoballsinmymouth : MonoBehaviour
         if(controller.isGrounded){
             velocityY=0.0f;
             moveSmoothVelocity = OGmoveVel;
+            floor = true;
         }
             velocityY += gravity * Time.deltaTime;
 
-            if (Input.GetButtonDown("Jump") && controller.isGrounded)
+            if (Input.GetButtonDown("Jump") && floor == true)
         {
+            Debug.Log("touh floor and jump");
             moveSmoothVelocity = jumpMoveSmoothVelocity;
             velocityY += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
+            floor = false;
         }
         Vector3 move = (transform.forward * currentDir.y + transform.right * currentDir.x) * speed + Vector3.up * velocityY;
         controller.Move(move * Time.deltaTime);
