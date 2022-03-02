@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ahhellnawshutup : MonoBehaviour
 {
     public GameObject npc;
-    public Text name;
+    public GameObject ui;
+    public TextMeshProUGUI names;
     public string realname;
     public string[] word;
 
-    public whathesayin worsd;
+
+    public whathesayin talkscript;
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,10 +27,11 @@ public class ahhellnawshutup : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider col){
+        talkscript = col.GetComponent<whathesayin>();
         npc = col.gameObject;
         realname = npc.name;
-        //name.text = realname;
-        word = worsd.dialogue;
+        names.text = realname;
+        word = talkscript.dialogue;
     }
 
 }

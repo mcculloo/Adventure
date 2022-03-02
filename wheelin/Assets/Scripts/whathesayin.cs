@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class whathesayin : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class whathesayin : MonoBehaviour
 
     void Start()
     {
-        Name = this.name;
+        if(Name == null) {
+            Name = this.name;
+        }
     }
 
     void Update()
