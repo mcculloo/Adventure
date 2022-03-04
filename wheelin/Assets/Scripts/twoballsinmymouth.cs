@@ -40,6 +40,8 @@ public class twoballsinmymouth : MonoBehaviour
     RaycastHit hit;
     public bool canUncrouch = true;
 
+    public IInteract interactScript;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -141,5 +143,7 @@ public class twoballsinmymouth : MonoBehaviour
         cam.localEulerAngles = Vector3.right * cameraPitch;
             
     }
+
+    //REALLY BAD ROCK STUFF
 
 }
