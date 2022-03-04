@@ -35,6 +35,9 @@ public class twoballsinmymouth : MonoBehaviour
     public Vector2 currentDir = Vector2.zero;
     Vector2 currentDirVelocity = Vector2.zero;
 
+    public float uncrouchlength;
+    RaycastHit hit;
+    public bool canUncrouch = true;
 
     void Start()
     {
@@ -100,12 +103,32 @@ public class twoballsinmymouth : MonoBehaviour
             speed = crouchSpeed;
             controller.height = 1f;
         } 
-        if(Input.GetKeyUp(KeyCode.C)) {
+        if(Input.GetKeyUp(KeyCode.C) && canUncrouch == true) {
             isCrouching = false;
             isSprinting = false;
              speed = OGspeed;
              controller.height = 2f;
-        }         
+        } 
+
+        if(Input.GetKeyUp(KeyCode.C) && canUncrouch == false) {
+            isCrouching = false;
+        } 
+
+        if(canUncrouch == true && isCrouching == false){
+            isCrouching = false;
+            isSprinting = false;
+            speed = OGspeed;
+            controller.height = 2f;
+        }
+
+        //UNCROUCHING RAYCASTS
+
+        Debug.DrawRay(transform.position, Vector3.up * uncrouchlength, Color.magenta);
+        if(Physics.Raycast(transform.position, Vector3.up, out hit, uncrouchlength)){
+            canUncrouch = false;
+        } else {
+            canUncrouch = true;
+        }
 
     }
 
