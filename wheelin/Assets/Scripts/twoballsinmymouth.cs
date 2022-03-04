@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class twoballsinmymouth : MonoBehaviour
 {
+
     public Rigidbody rb;
     public float speed;
     private float moveInput;
@@ -51,6 +52,7 @@ public class twoballsinmymouth : MonoBehaviour
         if(lockCursor){
             Cursor.lockState = CursorLockMode.Locked;
         }
+
     }
 
     void FixedUpdate() {
@@ -79,7 +81,6 @@ public class twoballsinmymouth : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && floor == true)
         {
-            Debug.Log("touh floor and jump");
             moveSmoothVelocity = jumpMoveSmoothVelocity;
             velocityY += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
             floor = false;
@@ -116,8 +117,6 @@ public class twoballsinmymouth : MonoBehaviour
 
         if(canUncrouch == true && isCrouching == false){
             isCrouching = false;
-            isSprinting = false;
-            speed = OGspeed;
             controller.height = 2f;
         }
 

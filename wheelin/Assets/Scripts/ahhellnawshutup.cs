@@ -18,38 +18,33 @@ public class ahhellnawshutup : MonoBehaviour
 
     public float seelength;
     RaycastHit hit;
-    private Transform _selection;
 
-    public bool resettalk = true;
     bool start;
-    bool notlooking;
 
     void Start()
     {
-
+        
     }
 
-    // Update is called once per frame
+
     void Update()
     {    
-        NotLooking();
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawLine(ray.origin, hit.point);
-        if(_selection != null){
-            notlooking = true;
-            resettalk = true;
-            _selection = null;
-        }
         if(Physics.Raycast(ray, out hit, seelength)){
             var selection = hit.transform;
             if(selection.CompareTag("NPC")){
-                notlooking = false;
-                resettalk = false;
                 talkscript = selection.GetComponent<whathesayin>();
                 npc = selection.gameObject;
                 realname = npc.name;
                 names.text = realname;
                 word = talkscript.dialogue;
+
+                //COLOR EDIT
+                names.color = new Color32(talkscript.R,talkscript.G,talkscript.B,255);
+
+                facts.color = new Color32(talkscript.NameR,talkscript.NameG,talkscript.NameB,255);
+
                 facts.text = word[talkscript.numinConv];
                 if(Input.GetKeyDown(KeyCode.E)){
                     ui.SetActive(true);
@@ -59,27 +54,21 @@ public class ahhellnawshutup : MonoBehaviour
                     facts.text = word[talkscript.numinConv++];
             } else if(Input.GetKeyDown(KeyCode.Mouse0)&& talkscript.numinConv == talkscript.maxnuminConv-1){
                 ui.SetActive(false);
-                resettalk = true;
-                start = false;
+                ResetTheTalk();
             }
-            _selection = selection;
             
         }
-        } ResetTheTalk(); 
+        } else {
+            if(start == true){
+                talkscript.numinConv = 0;
+                start = false; ui.SetActive(false);
+                }
     }
-              
+    }
 
         void ResetTheTalk(){
-            if(resettalk == true){
                 talkscript.numinConv = 0;
                 start = false;
-            }
-        }
-
-        void NotLooking(){
-            if (notlooking == true){
-                ui.SetActive(false);
-            }
         }
 
     }
