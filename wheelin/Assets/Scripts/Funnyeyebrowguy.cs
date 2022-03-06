@@ -19,4 +19,9 @@ public class Funnyeyebrowguy : MonoBehaviour, IInteract
     void Interact(){
         Debug.Log("Yo mama");
     }
+
+    void IInteract.Interact()
+    {
+        throw new System.NotImplementedException();
+    }
 }

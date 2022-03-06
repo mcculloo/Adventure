@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tree
+  m_Name: Palmwood
   m_Shader: {fileID: 4800000, guid: 9e0b78a84584ffb4b9d963b4c6f26436, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -75,15 +75,15 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HighIntensity: 1.5
-    - _LightScalar: 3.98
+    - _LightScalar: 3.24
     - _LowIntensity: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _OutlineSize: 10
     - _Parallax: 0.02
-    - _RampLevels: 2
-    - _RimAlpha: 0.241
+    - _RampLevels: 3
+    - _RimAlpha: 0
     - _RimDropOff: 0
     - _RimPower: 0
     - _SmoothnessTextureChannel: 0
@@ -95,8 +95,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
-    - _HighColor: {r: 0.5149074, g: 0.8207547, b: 0.52261615, a: 1}
-    - _LowColor: {r: 0.4450427, g: 0.6886792, b: 0.45128977, a: 1}
+    - _HighColor: {r: 0.8588236, g: 0.6862745, b: 0.40784317, a: 1}
+    - _LowColor: {r: 0.8584906, g: 0.68697363, b: 0.40899786, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
