@@ -12,6 +12,7 @@ public class ahhellnawshutup : MonoBehaviour
     public TextMeshProUGUI facts;
     public string realname;
     public string[] word;
+    public float textSpeed;
 
 
     public whathesayin talkscript;
@@ -21,7 +22,7 @@ public class ahhellnawshutup : MonoBehaviour
 
     bool start;
 
-    void Start()
+    void Awake()
     {
         
     }
@@ -45,13 +46,21 @@ public class ahhellnawshutup : MonoBehaviour
 
                 facts.color = new Color32(talkscript.NameR,talkscript.NameG,talkscript.NameB,255);
 
-                facts.text = word[talkscript.numinConv];
-                if(Input.GetKeyDown(KeyCode.E)){
+                
+                if(Input.GetKeyDown(KeyCode.E)&& start == false){
                     ui.SetActive(true);
                     start = true;
+                    StartCoroutine(TypeLine());
                 }
                 if(Input.GetKeyDown(KeyCode.Mouse0)&& talkscript.numinConv != talkscript.maxnuminConv-1 && start == true){
-                    facts.text = word[talkscript.numinConv++];
+                    if(facts.text == word[talkscript.numinConv]){
+                        StopAllCoroutines();
+                        talkscript.numinConv++;
+                        StartCoroutine(TypeLine());
+                    } else {
+                        StopAllCoroutines();
+                        facts.text = word[talkscript.numinConv];
+                    }
             } else if(Input.GetKeyDown(KeyCode.Mouse0)&& talkscript.numinConv == talkscript.maxnuminConv-1){
                 ui.SetActive(false);
                 ResetTheTalk();
@@ -67,8 +76,18 @@ public class ahhellnawshutup : MonoBehaviour
     }
 
         void ResetTheTalk(){
+                StopAllCoroutines();
                 talkscript.numinConv = 0;
                 start = false;
+                facts.text = string.Empty;
+        }
+
+        IEnumerator TypeLine(){
+            facts.text = string.Empty;
+            foreach(char c in word[talkscript.numinConv].ToCharArray()){
+                facts.text+= c;
+                yield return new WaitForSeconds(textSpeed);
+            }
         }
 
     }

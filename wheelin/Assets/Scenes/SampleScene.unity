@@ -1891,7 +1891,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 46, y: -17.00003}
+  m_AnchoredPosition: {x: 46, y: -17}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &488063824
@@ -4291,7 +4291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This guy is the baler
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4304fbdb41779b0468217f71c647a73d, type: 2}
   m_sharedMaterial: {fileID: 4980662252442114640, guid: 4304fbdb41779b0468217f71c647a73d, type: 2}
@@ -5194,7 +5194,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180565657}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: c7142db43643ec849bddf6fd8552424f, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 85a856ed37cb3474ba806e11514dfadc, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -5217,7 +5217,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
@@ -5233,7 +5233,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5242,7 +5242,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 1.01
+  MaxDistance: 3
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -7942,6 +7942,7 @@ MonoBehaviour:
   facts: {fileID: 1944611276}
   realname: 
   word: []
+  textSpeed: 0.05
   talkscript: {fileID: 0}
   seelength: 2.5
 --- !u!1 &1690892430 stripped
@@ -11479,8 +11480,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: bals and baller ahhh dasondasda sdasd talk talk atlasm dsadwa lorem ipsun
-    sad
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4304fbdb41779b0468217f71c647a73d, type: 2}
   m_sharedMaterial: {fileID: 4980662252442114640, guid: 4304fbdb41779b0468217f71c647a73d, type: 2}

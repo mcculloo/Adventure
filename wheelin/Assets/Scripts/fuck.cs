@@ -31,7 +31,7 @@ public class fuck : MonoBehaviour
         if (konami == true){
             cheatCodeText.text = "Cheats Enabled"; //+ GetKeyStrokeHistory(); <- if you want to show cheat code
         }
-        if(Input.GetKeyDown(KeyCode.Return) && konami == true && GetKeyStrokeHistory().Equals("OMPRESENTS")){
+        if(konami == true && GetKeyStrokeHistory().Equals("LIAMJAMMIN")){
             ClearKeyStrokeHistory();
             cheatCodeText.text = "Video Enabled???";
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
