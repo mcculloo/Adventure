@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Funnyeyebrowguy : MonoBehaviour, IInteract
 {
-    // Start is called before the first frame update
+    int numhit = 0;
+    //public delegate void TalkedTo();
+    // public event TalkedTo OnComplete; event failure
+    public GameObject rockman;
+
     void Start()
     {
         
@@ -16,12 +20,18 @@ public class Funnyeyebrowguy : MonoBehaviour, IInteract
         
     }
 
-    void Interact(){
-        Debug.Log("Yo mama");
-    }
+    public void Interact(){
 
-    void IInteract.Interact()
-    {
-        throw new System.NotImplementedException();
+        if(this.name == "monkeyrock"){
+            numhit++;
+            whathesayin talkscript = rockman.GetComponent<whathesayin>();
+            if(numhit == 1){
+                this.tag = "NPC";
+                talkscript.dialNum=2;
+                Debug.Log("dial num 2");
+            }
+        } else {        
+            Destroy(this.gameObject);
+            }
     }
 }

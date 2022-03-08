@@ -38,9 +38,10 @@ public class twoballsinmymouth : MonoBehaviour
 
     public float uncrouchlength;
     RaycastHit hit;
+    RaycastHit hitdos;
     public bool canUncrouch = true;
 
-    public IInteract interactScript;
+    public float interactLength;
 
     void Start()
     {
@@ -66,6 +67,7 @@ public class twoballsinmymouth : MonoBehaviour
     {
     Movement();
     CamMovement();
+    InteractWithThings();
     }
 
     void Movement(){
@@ -142,6 +144,18 @@ public class twoballsinmymouth : MonoBehaviour
         cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f);
         cam.localEulerAngles = Vector3.right * cameraPitch;
             
+    }
+
+    void InteractWithThings(){
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawLine(ray.origin, hitdos.point);
+        if(Physics.Raycast(ray, out hitdos, interactLength)){
+            var selection = hitdos.transform;
+            var interactable = selection.GetComponent<IInteract>();
+            if (Input.GetKeyDown(KeyCode.Mouse0) && interactable != null){                
+                interactable.Interact();
+            }
+        } 
     }
 
     //REALLY BAD ROCK STUFF

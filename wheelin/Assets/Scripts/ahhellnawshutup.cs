@@ -11,7 +11,8 @@ public class ahhellnawshutup : MonoBehaviour
     public TextMeshProUGUI names;
     public TextMeshProUGUI facts;
     public string realname;
-    public string[] word;
+    public List<string> word;
+    public GameObject textToAwake;
     public float textSpeed;
 
 
@@ -40,6 +41,10 @@ public class ahhellnawshutup : MonoBehaviour
                 realname = npc.name;
                 names.text = realname;
                 word = talkscript.dialogue;
+                textToAwake = talkscript.textObj;
+                if(!start){
+                    textToAwake.SetActive(true);
+                } 
 
                 //COLOR EDIT
                 names.color = new Color32(talkscript.R,talkscript.G,talkscript.B,255);
@@ -62,32 +67,46 @@ public class ahhellnawshutup : MonoBehaviour
                         facts.text = word[talkscript.numinConv];
                     }
             } else if(Input.GetKeyDown(KeyCode.Mouse0)&& talkscript.numinConv == talkscript.maxnuminConv-1){
+                if(facts.text != word[talkscript.numinConv]){
+                    StopAllCoroutines();
+                    facts.text = word[talkscript.numinConv];
+                } else {
                 ui.SetActive(false);
+                talkscript.finishedTalking = true;
                 ResetTheTalk();
+                }
+
             }
             
         }
-        } else {
+        } else { 
+            if(textToAwake!=null) {
+            textToAwake.SetActive(false);
+        }
             if(start == true){
                 talkscript.numinConv = 0;
                 start = false; ui.SetActive(false);
+                textToAwake.SetActive(false);
                 }
     }
     }
 
         void ResetTheTalk(){
                 StopAllCoroutines();
+                textToAwake.SetActive(false);
                 talkscript.numinConv = 0;
                 start = false;
                 facts.text = string.Empty;
         }
 
         IEnumerator TypeLine(){
+            textToAwake.SetActive(false);
             facts.text = string.Empty;
             foreach(char c in word[talkscript.numinConv].ToCharArray()){
                 facts.text+= c;
                 yield return new WaitForSeconds(textSpeed);
             }
         }
+
 
     }
