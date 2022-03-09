@@ -49,9 +49,8 @@ public class whathesayin : MonoBehaviour
             dialNum = 1;
             dialogue = AllDialogue[dialNum].DialogueOptions;
             maxnuminConv = dialogue.Count;
-            Debug.Log("TASDA");
         }
-        if(dialNum == 2 && finishedTalking){
+        if(dialNum >= 2 && finishedTalking){
             dialogue = AllDialogue[dialNum].DialogueOptions;
             maxnuminConv = dialogue.Count;
         }

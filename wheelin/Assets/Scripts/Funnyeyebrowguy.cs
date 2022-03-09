@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Funnyeyebrowguy : MonoBehaviour, IInteract
+public class Funnyeyebrowguy : MonoBehaviour, IInteract, ITalkEvent
 {
     int numhit = 0;
     //public delegate void TalkedTo();
@@ -25,7 +25,7 @@ public class Funnyeyebrowguy : MonoBehaviour, IInteract
         if(this.name == "monkeyrock"){
             numhit++;
             whathesayin talkscript = rockman.GetComponent<whathesayin>();
-            if(numhit == 1){
+            if(numhit == 2){
                 this.tag = "NPC";
                 talkscript.dialNum=2;
                 Debug.Log("dial num 2");
@@ -33,5 +33,9 @@ public class Funnyeyebrowguy : MonoBehaviour, IInteract
         } else {        
             Destroy(this.gameObject);
             }
+    }
+
+    public void TalkEvent(){
+            
     }
 }
