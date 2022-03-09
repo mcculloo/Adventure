@@ -23,6 +23,11 @@ public class ahhellnawshutup : MonoBehaviour
 
     bool start;
 
+    public float turnSpeed;
+    private bool turning;
+    private float r_turnSpeed;
+    private bool doneT = true;
+
     void Awake()
     {
         
@@ -53,6 +58,7 @@ public class ahhellnawshutup : MonoBehaviour
 
                 
                 if(Input.GetKeyDown(KeyCode.E)&& start == false){
+                    turning = true;
                     ui.SetActive(true);
                     start = true;
                     StartCoroutine(TypeLine());
@@ -71,6 +77,7 @@ public class ahhellnawshutup : MonoBehaviour
                     StopAllCoroutines();
                     facts.text = word[talkscript.numinConv];
                 } else {
+                turning = false;
                 ui.SetActive(false);
                 talkscript.finishedTalking = true;
                 ResetTheTalk();
@@ -79,7 +86,8 @@ public class ahhellnawshutup : MonoBehaviour
             }
             
         }
-        } else { 
+        } else {    
+            turning = false;    
             if(textToAwake!=null) {
             textToAwake.SetActive(false);
         }
@@ -89,7 +97,11 @@ public class ahhellnawshutup : MonoBehaviour
                 textToAwake.SetActive(false);
                 }
     }
+    if(turning || !doneT){
+        TurnNPC();
+    } 
     }
+
 
         void ResetTheTalk(){
                 StopAllCoroutines();
@@ -108,5 +120,11 @@ public class ahhellnawshutup : MonoBehaviour
             }
         }
 
+        void TurnNPC(){
+            Vector3 TargetLook = new Vector3(this.transform.position.x, npc.transform.position.y, this.transform.position.z);
+            Quaternion lookAtLoc = Quaternion.LookRotation(this.transform.position - npc.transform.position);
+            npc.transform.rotation = Quaternion.Lerp(npc.transform.rotation, lookAtLoc, Time.deltaTime * turnSpeed);
+            
+        }
 
     }

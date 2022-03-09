@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Funnyeyebrowguy : MonoBehaviour, IInteract, ITalkEvent
 {
     int numhit = 0;
-    //public delegate void TalkedTo();
-    // public event TalkedTo OnComplete; event failure
     public GameObject rockman;
 
     void Start()
@@ -25,14 +24,22 @@ public class Funnyeyebrowguy : MonoBehaviour, IInteract, ITalkEvent
         if(this.name == "monkeyrock"){
             numhit++;
             whathesayin talkscript = rockman.GetComponent<whathesayin>();
+            Animator animation = gameObject.GetComponent<Animator>();
             if(numhit == 2){
                 this.tag = "NPC";
                 talkscript.dialNum=2;
-                Debug.Log("dial num 2");
+                animation.SetBool("MonkeyUp", true);
+                float time = animation.GetCurrentAnimatorStateInfo(0).length;
+                StartCoroutine(anime(time, animation));
             }
         } else {        
             Destroy(this.gameObject);
             }
+    }
+
+    private IEnumerator anime(float timer, Animator hue){
+        yield return new WaitForSeconds(timer);
+        hue.enabled = false;
     }
 
     public void TalkEvent(){
