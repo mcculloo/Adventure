@@ -6,6 +6,6 @@ public interface IInteract{
     void Interact();
 }
 
-public interface ITalk{
-    void Talk();
+public interface ITalkEvent{
+    void TalkEvent();
 }
