@@ -7,6 +7,8 @@ public class Funnyeyebrowguy : MonoBehaviour, IInteract, ITalkEvent
 {
     int numhit = 0;
     public GameObject rockman;
+    public GameObject player;
+    public ParticleSystem rockEffect;
 
     void Start()
     {
@@ -26,14 +28,15 @@ public class Funnyeyebrowguy : MonoBehaviour, IInteract, ITalkEvent
             whathesayin talkscript = rockman.GetComponent<whathesayin>();
             Animator animation = gameObject.GetComponent<Animator>();
             if(numhit == 2){
+                StartCoroutine(anime(2f, animation));
                 this.tag = "NPC";
                 talkscript.dialNum=2;
                 animation.SetBool("MonkeyUp", true);
-                float time = animation.GetCurrentAnimatorStateInfo(0).length;
-                StartCoroutine(anime(time, animation));
             }
         } else {        
             Destroy(this.gameObject);
+            rockEffect.transform.position = this.transform.position;
+            Instantiate(rockEffect, this.transform.position, Quaternion.Euler(-90f,0f,0f));
             }
     }
 

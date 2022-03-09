@@ -122,7 +122,7 @@ public class ahhellnawshutup : MonoBehaviour
 
         void TurnNPC(){
             Vector3 TargetLook = new Vector3(this.transform.position.x, npc.transform.position.y, this.transform.position.z);
-            Quaternion lookAtLoc = Quaternion.LookRotation(this.transform.position - npc.transform.position);
+            Quaternion lookAtLoc = Quaternion.LookRotation(TargetLook - npc.transform.position);
             npc.transform.rotation = Quaternion.Lerp(npc.transform.rotation, lookAtLoc, Time.deltaTime * turnSpeed);
             
         }
