@@ -15,13 +15,13 @@ public class ahhellnawshutup : MonoBehaviour
     public GameObject textToAwake;
     public float textSpeed;
 
-
     public whathesayin talkscript;
 
     public float seelength;
     RaycastHit hit;
 
-    bool start;
+    public bool start;
+    public bool startingDial = true;
 
     public float turnSpeed;
     private bool turning;
@@ -57,22 +57,30 @@ public class ahhellnawshutup : MonoBehaviour
                 facts.color = new Color32(talkscript.NameR,talkscript.NameG,talkscript.NameB,255);
 
                 
-                if(Input.GetKeyDown(KeyCode.E)&& start == false){
+                if(Input.GetKeyDown(KeyCode.E)&& !start){
                     turning = true;
                     ui.SetActive(true);
                     start = true;
                     StartCoroutine(TypeLine());
                 }
-                if(Input.GetKeyDown(KeyCode.Mouse0)&& talkscript.numinConv != talkscript.maxnuminConv-1 && start == true){
+                if(Input.GetKeyDown(KeyCode.E)&& talkscript.numinConv != talkscript.maxnuminConv-1 && start){
+                    Debug.Log("pressed e to initiate");
                     if(facts.text == word[talkscript.numinConv]){
+                        Debug.Log("pressed e to normal talk");
                         StopAllCoroutines();
                         talkscript.numinConv++;
+                        startingDial = false;
                         StartCoroutine(TypeLine());
-                    } else {
+                    } else if(!startingDial && facts.text != word[talkscript.numinConv]){
                         StopAllCoroutines();
                         facts.text = word[talkscript.numinConv];
+                        start = true;
+                    }                    
+                    if(startingDial) {
+                        startingDial = false;
                     }
-            } else if(Input.GetKeyDown(KeyCode.Mouse0)&& talkscript.numinConv == talkscript.maxnuminConv-1){
+
+            } else if(Input.GetKeyDown(KeyCode.E)&& talkscript.numinConv == talkscript.maxnuminConv-1){
                 if(facts.text != word[talkscript.numinConv]){
                     StopAllCoroutines();
                     facts.text = word[talkscript.numinConv];
@@ -87,12 +95,13 @@ public class ahhellnawshutup : MonoBehaviour
             
         }
         } else {    
-            turning = false;    
+            turning = false;   
             if(textToAwake!=null) {
             textToAwake.SetActive(false);
         }
             if(start == true){
-                talkscript.numinConv = 0;
+                StopAllCoroutines();
+                talkscript.numinConv = 0; startingDial = true;
                 start = false; ui.SetActive(false);
                 textToAwake.SetActive(false);
                 }
@@ -108,6 +117,7 @@ public class ahhellnawshutup : MonoBehaviour
                 textToAwake.SetActive(false);
                 talkscript.numinConv = 0;
                 start = false;
+                startingDial = true;
                 facts.text = string.Empty;
         }
 
