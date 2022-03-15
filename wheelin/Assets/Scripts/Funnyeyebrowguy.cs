@@ -35,7 +35,6 @@ public class Funnyeyebrowguy : MonoBehaviour, IInteract, ITalkEvent
             }
         } else {        
             Destroy(this.gameObject);
-            rockEffect.transform.position = this.transform.position;
             Instantiate(rockEffect, this.transform.position, Quaternion.Euler(-90f,0f,0f));
             }
     }

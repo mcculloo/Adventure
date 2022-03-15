@@ -8594,7 +8594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804931037}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -52.288963, y: 4.5, z: 189.3744}
+  m_LocalPosition: {x: -52.288963, y: -8.9, z: 189.3744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14771,6 +14771,8 @@ MonoBehaviour:
   textSpeed: 0.05
   talkscript: {fileID: 0}
   seelength: 4
+  start: 0
+  startingDial: 1
   turnSpeed: 5
 --- !u!1 &1690892430 stripped
 GameObject:
