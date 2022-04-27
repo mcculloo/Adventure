@@ -43,6 +43,8 @@ public class twoballsinmymouth : MonoBehaviour
 
     public float interactLength;
 
+    public bool canTele;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -51,7 +53,7 @@ public class twoballsinmymouth : MonoBehaviour
         OGmoveVel = moveSmoothVelocity;
         sprintSpeed = speed * 1.5f;
         crouchSpeed = speed / 1.5f;
-    
+        canTele = true;
         if(lockCursor){
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -75,7 +77,6 @@ public class twoballsinmymouth : MonoBehaviour
         moveInput2 = Input.GetAxisRaw("Vertical");
         Vector2 direction = new Vector2(moveInput, moveInput2).normalized;
         currentDir = Vector2.SmoothDamp(currentDir, direction, ref currentDirVelocity, moveSmoothVelocity);
-
         if(controller.isGrounded){
             velocityY=0.0f;
             moveSmoothVelocity = OGmoveVel;
@@ -89,6 +90,8 @@ public class twoballsinmymouth : MonoBehaviour
             velocityY += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
             floor = false;
         }
+        
+        
         Vector3 move = (transform.forward * currentDir.y + transform.right * currentDir.x) * speed + Vector3.up * velocityY;
         controller.Move(move * Time.deltaTime);
 

@@ -7,7 +7,7 @@ public class Funnyeyebrowguy : MonoBehaviour, IInteract, ITalkEvent
 {
     int numhit = 0;
     public GameObject rockman;
-    public GameObject player;
+    //public GameObject player;
     public ParticleSystem rockEffect;
 
     void Start()

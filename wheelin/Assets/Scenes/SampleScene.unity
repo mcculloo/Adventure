@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.3558293, g: 0.56235814, b: 0.8018493, a: 1}
+  m_IndirectSpecularColor: {r: 0.35582355, g: 0.562351, b: 0.8018342, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -933,7 +933,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!114 &19391856
 MonoBehaviour:
@@ -948,7 +947,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 0}
 --- !u!4 &19391858 stripped
 Transform:
@@ -966,7 +964,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19684
+  m_Name: pb_Mesh37918
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2468,7 +2466,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!1001 &56464971
 PrefabInstance:
@@ -3092,7 +3089,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19624
+  m_Name: pb_Mesh37854
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5543,7 +5540,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &140961801 stripped
 Transform:
@@ -5804,7 +5800,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &153410661 stripped
 Transform:
@@ -6234,7 +6229,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20522
+  m_Name: pb_Mesh38790
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8566,7 +8561,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &234334371 stripped
 Transform:
@@ -9158,6 +9152,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 380246b32a4e44342890794c138af03a, type: 3}
   m_PrefabInstance: {fileID: 8901364}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &270620839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270620838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3ccde1c522d4f46883ca4e7fe9cdef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockman: {fileID: 0}
+  rockEffect: {fileID: 804931039}
 --- !u!64 &270620842
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9477,7 +9485,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &291845995 stripped
 Transform:
@@ -11010,6 +11017,119 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 106
   m_LocalEulerAnglesHint: {x: 0, y: 26.466, z: 0}
+--- !u!1 &326996168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 326996172}
+  - component: {fileID: 326996171}
+  - component: {fileID: 326996170}
+  - component: {fileID: 326996169}
+  - component: {fileID: 326996173}
+  m_Layer: 0
+  m_Name: Example Movethang
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &326996169
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326996168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &326996170
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326996168}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &326996171
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326996168}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &326996172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326996168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -523.5, y: 2.7, z: 759.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 124
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &326996173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326996168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eceb5862266339b4abc11134f70ebb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  othertele: {fileID: 1895482808}
+  playa: {fileID: 1680209146}
+  TeleportTimer: 0.78
+  SmoothToStop: 0.2
+  AvailableNextTeleport: 3
 --- !u!1 &327030030 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ff13a6a5e4e70b5458716eb9ba10086b, type: 3}
@@ -14321,7 +14441,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &443865424 stripped
 Transform:
@@ -15303,7 +15422,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &486330964 stripped
 Transform:
@@ -17091,7 +17209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!1 &550943836 stripped
 GameObject:
@@ -17258,7 +17375,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &557024382 stripped
 Transform:
@@ -19426,7 +19542,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &627338688 stripped
 Transform:
@@ -23313,7 +23428,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &779797994 stripped
 Transform:
@@ -23952,7 +24066,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21676
+  m_Name: pb_Mesh40012
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24367,7 +24481,7 @@ GameObject:
   - component: {fileID: 804931039}
   - component: {fileID: 804931038}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Rock Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32551,7 +32665,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &906265154 stripped
 Transform:
@@ -38306,7 +38419,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 106196630}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &1046815607 stripped
 Transform:
@@ -39065,7 +39177,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17862
+  m_Name: pb_Mesh36012
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -42485,7 +42597,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &1187647995 stripped
 Transform:
@@ -44593,7 +44704,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &1281760609 stripped
 Transform:
@@ -47467,7 +47577,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21434
+  m_Name: pb_Mesh39758
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -48139,7 +48249,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!1 &1400299543 stripped
 GameObject:
@@ -49859,7 +49968,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &1431073016 stripped
 Transform:
@@ -52150,6 +52258,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 380246b32a4e44342890794c138af03a, type: 3}
   m_PrefabInstance: {fileID: 1141363600}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1495206912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495206911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3ccde1c522d4f46883ca4e7fe9cdef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockman: {fileID: 0}
+  rockEffect: {fileID: 804931039}
 --- !u!64 &1495206915
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52485,7 +52607,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17992
+  m_Name: pb_Mesh36150
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -54199,7 +54321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &1578942287 stripped
 Transform:
@@ -55087,7 +55208,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &1609792609 stripped
 Transform:
@@ -55189,7 +55309,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19480
+  m_Name: pb_Mesh37706
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -57200,7 +57320,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2.15
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1680209148
@@ -57296,6 +57416,7 @@ MonoBehaviour:
   uncrouchlength: 5
   canUncrouch: 1
   interactLength: 3
+  canTele: 0
 --- !u!143 &1680209152
 CharacterController:
   m_ObjectHideFlags: 0
@@ -57324,7 +57445,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -63906,7 +64027,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &1728861549 stripped
 Transform:
@@ -63931,7 +64051,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &1728868277 stripped
 Transform:
@@ -64503,7 +64622,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &1748805312 stripped
 Transform:
@@ -64516,7 +64634,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21422
+  m_Name: pb_Mesh39746
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -64798,7 +64916,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19030
+  m_Name: pb_Mesh37234
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -68075,6 +68193,119 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff13a6a5e4e70b5458716eb9ba10086b, type: 3}
+--- !u!1 &1895482804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1895482808}
+  - component: {fileID: 1895482807}
+  - component: {fileID: 1895482806}
+  - component: {fileID: 1895482805}
+  - component: {fileID: 1895482809}
+  m_Layer: 0
+  m_Name: Other example thing goes here
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1895482805
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895482804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1895482806
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895482804}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1895482807
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895482804}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1895482808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895482804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -533.32, y: 2.61, z: 759.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 125
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1895482809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895482804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eceb5862266339b4abc11134f70ebb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  othertele: {fileID: 326996172}
+  playa: {fileID: 1680209146}
+  TeleportTimer: 0.78
+  SmoothToStop: 0.2
+  AvailableNextTeleport: 3
 --- !u!1001 &1897304850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72238,7 +72469,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockman: {fileID: 0}
-  player: {fileID: 0}
   rockEffect: {fileID: 804931039}
 --- !u!4 &1935146368 stripped
 Transform:
@@ -77057,7 +77287,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20424
+  m_Name: pb_Mesh38684
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
