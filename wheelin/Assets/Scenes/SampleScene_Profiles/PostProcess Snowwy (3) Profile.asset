@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: Post-process Volume Profile
+  m_Name: PostProcess Snowwy (3) Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 8089371459200748637}
---- !u!114 &8089371459200748637
+  - {fileID: 2556581357854499434}
+--- !u!114 &2556581357854499434
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31,7 +31,7 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   gradingMode:
-    overrideState: 0
+    overrideState: 1
     value: 1
   externalLut:
     overrideState: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 1
+    value: 0
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -67,28 +67,28 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: -12.4
+    value: 1
   tint:
     overrideState: 1
-    value: -34.5
+    value: -10.5
   colorFilter:
     overrideState: 1
-    value: {r: 0.45882353, g: 0.48716378, b: 0.81960785, a: 1}
+    value: {r: 0.31955323, g: 0.4056604, b: 0.31955323, a: 1}
   hueShift:
     overrideState: 1
-    value: 0
+    value: -22
   saturation:
     overrideState: 1
-    value: -18.1
+    value: 0
   brightness:
     overrideState: 0
     value: 0
   postExposure:
     overrideState: 1
-    value: -1
+    value: -2
   contrast:
     overrideState: 1
-    value: -47.7
+    value: -39.1
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
