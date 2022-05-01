@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Moveyouhoe : MonoBehaviour
 {
@@ -14,15 +15,19 @@ public float AvailableNextTeleport;
 
 Vector2 currentDirVelocity = Vector2.zero;
 
+public bool moveToOtherScene;
+public string sceneToMoveTo;
+
 void Start(){
     movethishoe = playa.GetComponent<twoballsinmymouth>();
 }
 
 void OnTriggerEnter(Collider col){
-    if(col.gameObject.CompareTag("Player") && movethishoe.canTele == true){
+    if(col.gameObject.CompareTag("Player") && movethishoe.canTele){
         movethishoe.canTele = false;
         StartCoroutine(teleportpls(TeleportTimer, SmoothToStop));
     } 
+
 }
 
     
@@ -30,11 +35,17 @@ void OnTriggerEnter(Collider col){
         movethishoe.controller.enabled = false;
         movethishoe.rb.velocity = movethishoe.rb.velocity * stopSpeed;
         yield return new WaitForSeconds(timer + stopSpeed);
+
+        if(!moveToOtherScene){
         playa.transform.position = othertele.transform.position;
         movethishoe.controller.enabled = true;
-        Debug.Log("teleport");
         yield return new WaitForSeconds(AvailableNextTeleport);
         movethishoe.canTele = true;
+        }
+        
+        if(moveToOtherScene){
+            SceneManager.LoadScene(sceneToMoveTo);
+        }
     }
 
 }
