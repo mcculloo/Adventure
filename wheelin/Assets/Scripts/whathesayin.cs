@@ -1,3 +1,6 @@
+/* To Use you need to make the tag of the NPC into NPC, add a text image as a child of the NPC and place it where you want it to show up when you look the NPC, then add dialogue. There needs to be a sort of collider so the character can actually lock onto him.*/
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +8,10 @@ using UnityEngine.UI;
 
 public class whathesayin : MonoBehaviour
 {
+    //LIST THAT IS USED
+    public List<MyClass> AllDialogue;
+
+    [HideInInspector]
     public List<string> dialogue;
     [HideInInspector]
     public int numinConv;
@@ -32,7 +39,6 @@ public class whathesayin : MonoBehaviour
     [HideInInspector]
     public GameObject textObj;
 
-    public List<MyClass> AllDialogue;
 
     void Start()
     {
