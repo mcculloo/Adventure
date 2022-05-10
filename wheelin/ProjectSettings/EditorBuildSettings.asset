@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Treeland.unity
     guid: eede715ac51332e40bb1ceab24e35a4c
+  - enabled: 1
+    path: "Assets/Scenes/\u5E03\u9B6F\u8D6B\u5E03\u9B6F\u8D6B.unity"
+    guid: a59458f1451098e4b873f35e31b27743
   m_configObjects: {}

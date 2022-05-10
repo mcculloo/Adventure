@@ -7,4 +7,7 @@ public class YouHoldinThisShit : ScriptableObject
 {
     public int ItemID;
     public GameObject prefab;
+
+    [TextArea(15,20)]
+    public string desc;
 }
