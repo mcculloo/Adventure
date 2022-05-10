@@ -72,6 +72,7 @@ public class ahhellnawshutup : MonoBehaviour
                         startingDial = false;
                         StartCoroutine(TypeLine());
                     } else if(!startingDial && facts.text != word[talkscript.numinConv]){
+                        Debug.Log("skipped dialoge");
                         StopAllCoroutines();
                         facts.text = word[talkscript.numinConv];
                         start = true;
