@@ -12,7 +12,7 @@ public class DoInventory : MonoBehaviour
 
         void FixedUpdate(){
             for(int i = 0; i < inv.Inventory.Count; i++){
-                //slots[i].text = inv.Inventory.InventorySlot.item.name;
+                slots[i].text = inv.Inventory[i].item.name;
             }
         }
 

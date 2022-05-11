@@ -8,6 +8,8 @@ public class Pocketfulllomoney : ScriptableObject
 
     public List<InventorySlot> Inventory;
 
+    public YouHoldinThisShit _item;
+    public int _amount;
 
     public void AddItem(YouHoldinThisShit _item, int _amount){
         bool hasItem = false;
