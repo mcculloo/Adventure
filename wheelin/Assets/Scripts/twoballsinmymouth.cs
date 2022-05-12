@@ -24,7 +24,6 @@ public class twoballsinmymouth : MonoBehaviour
     public Transform cam;
     public float mouseSensitivity;
     private float cameraPitch = 50f;
-    bool lockCursor = true;
     [SerializeField][Range(0.0f,0.5f)]float mouseSmoothVelocity;
     [SerializeField][Range(0.0f,0.5f)]float mouseSmoothTime;
     Vector2 currentMouseDelta = Vector2.zero;
@@ -54,9 +53,8 @@ public class twoballsinmymouth : MonoBehaviour
         sprintSpeed = speed * 1.5f;
         crouchSpeed = speed / 1.5f;
         canTele = true;
-        if(lockCursor){
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        Cursor.lockState = CursorLockMode.Locked;
+
 
     }
 

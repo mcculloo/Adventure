@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemID: 1
   prefab: {fileID: 919132149155446097, guid: 044babb9e06af4a46a46fd618f6b2678, type: 3}
+  desc: mining all night B)

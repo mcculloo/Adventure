@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemID: 4
   prefab: {fileID: 919132149155446097, guid: 190e3bc906c01a34fa10068380ab059f, type: 3}
+  desc: this was supposed to be something cool

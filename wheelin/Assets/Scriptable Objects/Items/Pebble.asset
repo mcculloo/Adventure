@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemID: 2
   prefab: {fileID: 919132149155446097, guid: 380246b32a4e44342890794c138af03a, type: 3}
+  desc: its a wrock
