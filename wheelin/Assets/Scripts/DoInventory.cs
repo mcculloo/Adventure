@@ -21,6 +21,9 @@ public class DoInventory : MonoBehaviour
 
         private TextMeshProUGUI[] descName;
 
+        public int invNum = -1;
+        public Transform handSpace;
+
         void Update(){
         OpenBook();
     }
@@ -40,7 +43,8 @@ public class DoInventory : MonoBehaviour
         public void onButtonClick(){
             descPage.SetActive(true);
             for(int i = 0; i < inv.Inventory.Count; i++){
-                    if(slotButtons[i]== EventSystem.current.currentSelectedGameObject){
+                    if(slotButtons[i] == EventSystem.current.currentSelectedGameObject){
+                    invNum = i;
                     descName = descPage.GetComponentsInChildren<TextMeshProUGUI>();
                     descName[0].text = inv.Inventory[i].item.name;
                     descName[1].text = inv.Inventory[i].item.desc;
@@ -50,7 +54,22 @@ public class DoInventory : MonoBehaviour
         }
 
         public void onEquip(){
-
+            int newitemID = -1;
+            for(int i = 0; i < inv.Inventory.Count; i++){
+                if(i == invNum){
+                    if(newitemID != inv.Inventory[i].item.ItemID){
+                    Instantiate(inv.Inventory[i].item.prefab, handSpace);
+                    Debug.Log("spawned " + inv.Inventory[i].item.name);
+                    newitemID = inv.Inventory[i].item.ItemID;
+                    Debug.Log(newitemID);
+                    Debug.Log(inv.Inventory[i].item.ItemID);
+                    } else {
+                    Debug.Log("same");
+                    break;
+                    }
+                    
+                }
+            }
         }
 
         void OpenBook(){
