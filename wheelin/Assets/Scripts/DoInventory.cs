@@ -24,8 +24,11 @@ public class DoInventory : MonoBehaviour
         public int invNum = -1;
         public Transform handSpace;
 
+        public List<int> itemsSpawned;
+
         void Update(){
         OpenBook();
+
     }
 
         void FixedUpdate(){
@@ -54,19 +57,26 @@ public class DoInventory : MonoBehaviour
         }
 
         public void onEquip(){
-            int newitemID = -1;
+            int indexedItem = -1;
             for(int i = 0; i < inv.Inventory.Count; i++){
                 if(i == invNum){
-                    if(newitemID != inv.Inventory[i].item.ItemID){
-                    Instantiate(inv.Inventory[i].item.prefab, handSpace);
-                    Debug.Log("spawned " + inv.Inventory[i].item.name);
-                    newitemID = inv.Inventory[i].item.ItemID;
-                    Debug.Log(newitemID);
-                    Debug.Log(inv.Inventory[i].item.ItemID);
-                    } else {
-                    Debug.Log("same");
-                    break;
+                    indexedItem = i;
+                    Debug.Log("item found");
+                    itemsSpawned.Add(i);
+                    for(int j = 0; j < itemsSpawned.Count; j++){
+                        Debug.Log("itereating through things we have");
+                        if(itemsSpawned[j] == indexedItem && inv.Inventory[i].item.wasSpawned == false){
+                            Debug.Log("item was in list but not spawned");
+                            Instantiate(inv.Inventory[i].item.prefab, handSpace);
+                            inv.Inventory[i].item.wasSpawned = true;
+                            Debug.Log("spawned " + inv.Inventory[i].item.name);
+                            break;
+                        } else if(itemsSpawned[j] == indexedItem && inv.Inventory[i].item.wasSpawned == true) {
+                            Debug.Log("item was found but was spawened");
+                        }
+
                     }
+                    
                     
                 }
             }

@@ -10,4 +10,6 @@ public class YouHoldinThisShit : ScriptableObject
 
     [TextArea(15,20)]
     public string desc;
+
+    public bool wasSpawned;
 }
